@@ -1,26 +1,71 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <body ref="body">
+    <div class="top-bar">
+      <button @click="toggleOptionsMenu">
+        <fa icon="fa-solid fa-bars" />
+      </button>
+    </div>
+    <div class="main-timer-content">
+      <Timer></Timer>
+    </div>
+    <div class="bottom-bar">
+      <fa icon="fa-solid fa-expand" />
+      <fa icon="fa-brands fa-github" />
+    </div>
+
+  </body>
+
+  <div v-if="showOptionsMenu">
+    <OptionsMenu @close="toggleOptionsMenu"></OptionsMenu>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import OptionsMenu from "./components/OptionsMenu.vue";
+import Timer from "./components/Timer.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { OptionsMenu, Timer },
+  data() {
+    return {
+      title: "My First App",
+      showOptionsMenu: false,
+      blur: true,
+    };
+  },
+  methods: {
+    toggleOptionsMenu() {
+      this.showOptionsMenu = !this.showOptionsMenu;
+    },
+  },
+};
 </script>
 
-<style lang="scss">
+<style>
+@font-face {
+  font-family: "Nasa";
+  src: url(./fonts/nasalization-rg.otf) format("opentype");
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Nasa";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #d5dde6;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+body {
+  background: #333;
+  margin: 1rem;
+  overflow: hidden;
 }
 </style>
