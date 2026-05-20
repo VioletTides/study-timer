@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build:pages": "vue-cli-service build",
-    "deploy:pages": "npm run build:pages && node scripts/deploy-pages.js"
+    "deploy:pages": "npm run build:pages && node scripts/deploy-pages.js",
+    "capture:thumb": "node scripts/capture-portfolio-thumb.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "playwright": "^1.51.0",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0"
   }

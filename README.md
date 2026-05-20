@@ -60,3 +60,12 @@ git push
 Pushes to `main` rebuild the portfolio via GitHub Actions and publish `dist/`, including the demo.
 
 Link from your portfolio with a trailing slash: `/projects/timer/demo/`
+
+### Portfolio project thumbnail
+
+Regenerate the Mother amber homescreen screenshot (requires dev server on port 8081 and ImageMagick):
+
+```bash
+npm run serve   # separate terminal
+npm run capture:thumb
+```
