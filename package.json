@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "build:pages": "vue-cli-service build",
+    "deploy:pages": "npm run build:pages && node scripts/deploy-pages.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
